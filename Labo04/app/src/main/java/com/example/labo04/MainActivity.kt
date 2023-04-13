@@ -4,14 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
 
     // UI elements
-    private lateinit var nameTI : TextInputEditText
-    private lateinit var emailTI: TextInputEditText
-    private lateinit var phoneTI: TextInputEditText
+    private lateinit var nameTI : EditText
+    private lateinit var emailTI: EditText
+    private lateinit var phoneTI: EditText
     private lateinit var saveButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,16 +24,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bind(){
-        nameTI = findViewById(R.id.nameTV)
-        emailTI = findViewById(R.id.emailTV)
-        phoneTI = findViewById(R.id.phoneTV)
+        nameTI = findViewById(R.id.editText_name)
+        emailTI = findViewById(R.id.email_text)
+        phoneTI = findViewById(R.id.phone_number_text)
         saveButton = findViewById(R.id.save_button)
 
     }
 
     private fun addListener() {
         saveButton.setOnClickListener {
-            val intent = Intent(this, ResultsActivity::class.java)
+            val intent = Intent(this, ResultActivity::class.java)
 
             val nameFill = nameTI.text.toString()
             val emailFill = emailTI.text.toString()

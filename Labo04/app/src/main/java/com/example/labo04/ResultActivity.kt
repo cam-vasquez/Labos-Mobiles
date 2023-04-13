@@ -6,12 +6,12 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class ResultsActivity : AppCompatActivity(){
+class ResultActivity : AppCompatActivity(){
 
 
     // UI elements
     private lateinit var shareBtn: Button
-    
+
     //values
     var nameFill: String = ""
     var emailFill: String = ""
@@ -19,7 +19,7 @@ class ResultsActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_result)
+        setContentView(R.layout.activity_result2)
 
         nameFill = intent.getStringExtra("name").toString()
         emailFill = intent.getStringExtra("email").toString()

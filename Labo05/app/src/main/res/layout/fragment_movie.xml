@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".movieFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:backgroundTint="@color/backgroundLayout"
+        android:padding="@dimen/general_gap">
+
+        <ImageView
+            android:id="@+id/star_wars_pic"
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/tittle_star_wars_movie"
+            android:padding="@dimen/small_gap"
+            android:src="@drawable/star_wars">
+        </ImageView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/movie1_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/movie1_tittle"></TextView>
+
+    <TextView
+        android:id="@+id/movie1_rating"
+        android:layout_width="173dp"
+        android:layout_height="match_parent"
+        android:text="@string/rating_movie1"></TextView>
+
+
+</FrameLayout>

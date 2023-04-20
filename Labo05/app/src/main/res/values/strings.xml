@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Labo05</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tittle_billboard">Billboard</string>
+    <string name="btn_description_add_new_movie">Add New Movie</string>
+    <string name="movie1_tittle">Star Wars episodio : La venganza de los Sith</string>
+    <string name="tittle_star_wars_movie">Star Wars Movie</string>
+    <string name="rating_movie1">9.8</string>
+</resources>

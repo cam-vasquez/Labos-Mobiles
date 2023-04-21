@@ -15,24 +15,22 @@
         android:padding="@dimen/general_gap"
         tools:context=".MainActivity">
 
-
         <TextView
             android:id="@+id/display_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/general_gap"
             android:layout_marginEnd="@dimen/general_gap"
-            android:layout_marginBottom="@dimen/general_gap"
             android:gravity="center"
-            android:text="New Movie"
+            android:text="@string/tittle_new_movie"
             android:textColor="@color/white"
-            android:textSize="@dimen/medium_textSIze"
+            android:textSize="@dimen/largeSize_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.137"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.283"
+            app:layout_constraintVertical_bias="0.125"
             tools:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -43,7 +41,7 @@
             android:layout_marginStart="@dimen/general_gap"
             android:layout_marginTop="@dimen/medium_gap"
             android:layout_marginEnd="@dimen/general_gap"
-            android:hint="Name"
+            android:hint="@string/name_hint_text"
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/white"
             app:layout_constraintEnd_toEndOf="@+id/display_textView"
@@ -67,7 +65,7 @@
             android:layout_marginTop="@dimen/medium_gap"
             android:layout_marginEnd="@dimen/general_gap"
             android:backgroundTint="@color/cardLayout"
-            android:hint="Category"
+            android:hint="@string/category_hint_text"
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/cardLayout"
             app:layout_constraintEnd_toEndOf="@+id/outlinedTextField_name"
@@ -75,10 +73,11 @@
             app:layout_constraintTop_toBottomOf="@+id/outlinedTextField_name">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/category_text"
+                android:id="@+id/category_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardLayout" />
+                android:background="@color/cardLayout"
+                android:padding="@dimen/general_gap"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,7 +90,7 @@
             android:layout_marginTop="@dimen/medium_gap"
             android:layout_marginEnd="@dimen/general_gap"
             android:backgroundTint="@color/cardLayout"
-            android:hint="Description"
+            android:hint="@string/Description_hint_text"
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/cardLayout"
             app:layout_constraintEnd_toEndOf="@+id/outlinedTextField_category"
@@ -115,7 +114,7 @@
             android:layout_marginTop="@dimen/medium_gap"
             android:layout_marginEnd="@dimen/general_gap"
             android:backgroundTint="@color/cardLayout"
-            android:hint="Description"
+            android:hint="@string/Rating_hint_text"
             android:textColorHint="@color/white"
             app:boxStrokeColor="@color/cardLayout"
             app:layout_constraintEnd_toEndOf="@+id/outlinedTextField_descpription"
@@ -133,12 +132,15 @@
         <Button
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_gap"
             android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginBottom="@dimen/large_gap"
             android:backgroundTint="@color/buttonColor"
-            android:text="Sumbit"
+            android:text="@string/sumbitBtn_text"
             android:textColor="@color/black"
             app:cornerRadius="@dimen/small_gap"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/outlinedTextField_calification"
             app:layout_constraintStart_toStartOf="@+id/outlinedTextField_calification"
             app:layout_constraintTop_toBottomOf="@+id/outlinedTextField_calification"

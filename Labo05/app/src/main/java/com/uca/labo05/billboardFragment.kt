@@ -5,13 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class billboardFragment : Fragment() {
 
-    private lateinit var buttonNewMovieFragment: Button
+    private lateinit var buttonNewMovieFragment: FloatingActionButton
+    private lateinit var cardViewFragmentMovie: CardView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,11 +29,24 @@ class billboardFragment : Fragment() {
         buttonNewMovieFragment.setOnClickListener{
             it.findNavController().navigate((R.id.action_billboardFragment6_to_newMovieFragment2))
         }
+        listeners()
     }
 
 
     private fun bind(){
-        buttonNewMovieFragment = view?.findViewById(R.id.button_add_new_movie) as Button
+        cardViewFragmentMovie = view?.findViewById(R.id.card_view_movie1_sw) as CardView
+        buttonNewMovieFragment = view?.findViewById(R.id.button_add_new_movie) as FloatingActionButton
     }
+
+    private fun listeners(){
+        cardViewFragmentMovie.setOnClickListener{
+            it.findNavController().navigate((R.id.action_billboardFragment6_to_movieFragment))
+        }
+        buttonNewMovieFragment.setOnClickListener{
+            it.findNavController().navigate(R.id.action_billboardFragment6_to_newMovieFragment2)
+        }
+
+    }
+
 
 }

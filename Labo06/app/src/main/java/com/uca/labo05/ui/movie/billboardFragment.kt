@@ -1,4 +1,4 @@
-package com.uca.labo05
+package com.uca.labo05.ui.movie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.uca.labo05.R
 
 
 class billboardFragment : Fragment() {
@@ -34,17 +35,18 @@ class billboardFragment : Fragment() {
 
 
     private fun bind(){
-        cardViewFragmentMovie = view?.findViewById(R.id.card_view_movie1_sw) as CardView
         buttonNewMovieFragment = view?.findViewById(R.id.button_add_new_movie) as FloatingActionButton
+        cardViewFragmentMovie = view?.findViewById(R.id.card_view_movie1_sw) as CardView
     }
 
     private fun listeners(){
-        cardViewFragmentMovie.setOnClickListener{
-            it.findNavController().navigate((R.id.action_billboardFragment6_to_movieFragment))
-        }
         buttonNewMovieFragment.setOnClickListener{
             it.findNavController().navigate(R.id.action_billboardFragment6_to_newMovieFragment2)
         }
+        cardViewFragmentMovie.setOnClickListener{
+            it.findNavController().navigate((R.id.action_billboardFragment6_to_movieFragment))
+        }
+
 
     }
 

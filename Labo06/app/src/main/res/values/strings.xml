@@ -17,5 +17,7 @@
     <string name="category_hint_text">Category</string>
     <string name="Rating_hint_text">Calification</string>
     <string name="sumbitBtn_text">Sumbit</string>
+    <string name="share_text">Name: %1$s \Category %2$s \Description: %3$s \nQualification: %3$s</string>
+
 
 </resources>

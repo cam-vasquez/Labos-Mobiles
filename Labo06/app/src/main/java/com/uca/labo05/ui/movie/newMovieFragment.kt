@@ -1,6 +1,7 @@
 package com.uca.labo05.ui.movie
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
 import com.uca.labo05.R
+import kotlin.math.log
 
 private lateinit var submitBtn : Button
 
@@ -31,12 +33,15 @@ class newMovieFragment : Fragment() {
     }
 
     private fun bind(){
-        submitBtn = view?.findViewById(R.id.button_add_new_movie) as Button
+        submitBtn = view?.findViewById(R.id.save_button) as Button
     }
 
     private fun listeners(){
         submitBtn.setOnClickListener{
             it.findNavController().navigate(R.id.action_newMovieFragment_to_billboardFragment62)
+
         }
+
+
     }
 }

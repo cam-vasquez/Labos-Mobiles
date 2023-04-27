@@ -1,0 +1,8 @@
+1. ¿En qué consiste el patrón de diseño Repository?
+Este esquema de diseño tiene como objetivo separar la capa de datos de la aplicación del resto de los componentes. La capa de datos se refiere a la sección que gestiona la información y la lógica empresarial, manteniéndola separada de los elementos visuales, lo que permite una exposición coherente de las API para que el resto de la aplicación pueda acceder a los datos de manera eficiente.
+
+2. ¿Qué es el ViewModel?
+Se trata de un contenedor de estado a nivel de pantalla que encapsula la lógica empresarial relacionada y expone el estado a la UI. Una de sus principales ventajas es que almacena en caché el estado y lo mantiene durante los cambios de configuración, lo que significa que la UI no necesita recuperar los datos al navegar entre actividades o al realizar cambios de configuración, como cuando se rota la pantalla. 
+
+Además, este contenedor actúa como intermediario entre la capa de datos y la interfaz de usuario.
+

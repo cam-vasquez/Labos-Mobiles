@@ -6,7 +6,7 @@ LiveData nos proporciona un contenedor de datos observable que puede contener cu
 
 ### 2. ¿Qué patrón de diseño utiliza LiveData?  
 
-
+LiveData sigue el patrón de diseño observador.
 
 ### 3. Menciona que se debe agregar al Gradle para poder implementar DataBinding  
 

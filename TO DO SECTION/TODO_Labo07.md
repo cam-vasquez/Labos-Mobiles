@@ -18,4 +18,9 @@ dataBinding{
 
 ### 4. ¿Qué es DataBinding? Menciona sus ventajas frente a findViewById  
 
+DataBinding es una función de Android que permite vincular los elementos de la interfaz de usuario (UI) de una aplicación directamente a los datos de la aplicación, lo que significa que no es necesario realizar actualizaciones manuales para que la interfaz refleje los cambios en los datos. 
+
+-  
+-  
+
 

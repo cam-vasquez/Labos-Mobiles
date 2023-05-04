@@ -5,10 +5,10 @@
     android:id="@+id/card_view_movie"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/normal_gap"
+    android:layout_margin="@dimen/regular_gap"
     app:cardBackgroundColor="@color/cardLayout"
-    app:cardCornerRadius="@dimen/gap"
-    tools:context=".ui.movie.item_movie">
+    app:cardCornerRadius="@dimen/small_gap"
+    tools:context=".ui.movie.ItemMovieFragment">
 
 
     <LinearLayout
@@ -22,16 +22,16 @@
             android:layout_width="wrap_content"
             android:layout_height="120dp"
             android:layout_weight="2"
-            android:paddingLeft="@dimen/gap"
-            android:src="@drawable/deafult_movies" />
+            android:paddingLeft="@dimen/small_gap"
+            android:src="@drawable/default_movies"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/normal_gap"
-            android:paddingVertical="@dimen/gap">
+            android:paddingHorizontal="@dimen/regular_gap"
+            android:paddingVertical="@dimen/small_gap">
 
             <TextView
                 android:id="@+id/text_view_name"

@@ -2,103 +2,68 @@ package com.example.laboratorio_06.ui.movie
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
-import com.example.laboratorio_06.R
-import com.example.laboratorio_06.data.model.MovieModel
-import com.example.laboratorio_06.data.model.movies
-import com.example.laboratorio_06.repositories.MovieRepository
+import androidx.navigation.fragment.findNavController
+import com.example.laboratorio_06.databinding.FragmentNewMovieBinding
 
-// TODO: Rename parameter arguments choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//private const val ARG_PARAM1 = "param1"
-//private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [NewMovieFragment.newInstance] factory method to
- * create an instance of this fragment.
- * Add movies to application data
- */
 class NewMovieFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    //private var param1: String? = null
-    //private var param2: String? = null
-    private lateinit var btnSubmit : Button
-    private lateinit var editTextName : EditText
-    private lateinit var editTextCategory : EditText
-    private lateinit var editTextQualification : EditText
-    private lateinit var editTextDescription : EditText
-    //New
-    private val movieViewModel:MovieViewModel by activityViewModels {MovieViewModel.Factory}
+
+
+    private val movieViewModel: MovieViewModel by activityViewModels {
+        MovieViewModel.Factory
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            //param1 = it.getString(ARG_PARAM1)
-            //param2 = it.getString(ARG_PARAM2)
+
         }
     }
+
+    private lateinit var binding: FragmentNewMovieBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_movie, container, false)
+        binding  = FragmentNewMovieBinding.inflate(inflater, container , false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bind()
-        listeners()
+        setViewModel()
+        observerStatus()
     }
 
-
-
-    private fun bind(){
-        btnSubmit = view?.findViewById(R.id.btn_submit) as Button
-        editTextName = view?.findViewById(R.id.edit_text_name) as EditText
-        editTextCategory = view?.findViewById(R.id.edit_text_category) as EditText
-        editTextDescription = view?.findViewById(R.id.edit_text_description) as EditText
-        editTextQualification = view?.findViewById(R.id.edit_text_calification) as EditText
+    private fun setViewModel(){
+        binding.viewmodel = movieViewModel
     }
 
-    private fun listeners(){
+    private fun observerStatus(){
+        movieViewModel.status.observe(viewLifecycleOwner) {
+            status -> when{
+               status.equals(MovieViewModel.WRONG_INFORMATION) -> {
+                   Log.d(APP_TAG, status)
+                   movieViewModel.clearStatus() }
+                status.equals(MovieViewModel.MOVIE_CREATED) -> {
+                    Log.d(APP_TAG, status)
+                    Log.d(APP_TAG, movieViewModel.getMovies().toString())
 
-        btnSubmit.setOnClickListener{
-            if(!safeNullData()){
-                saveData()
-                it.findNavController().navigate(R.id.action_newMovieFragment_to_billBoardFragment);
+                    movieViewModel.clearStatus()
+                    findNavController().popBackStack() }
             }
         }
     }
 
-    private fun safeNullData(): Boolean{
-        return when{
-            editTextName.text.isEmpty() -> true
-            editTextCategory.text.isEmpty() -> true
-            editTextDescription.text.isEmpty() -> true
-            editTextQualification.text.isEmpty() -> true
-            else -> false
-        }
-    }
-
-    private fun saveData(){
-        val newMovie = MovieModel(
-            editTextName.text.toString(),
-            editTextCategory.text.toString(),
-            editTextDescription.text.toString(),
-            editTextQualification.text.toString())
-
-        movieViewModel.addMovies(newMovie)
-        Log.d("movie", movieViewModel.getMovies().toString())
+    companion object {
+        const val APP_TAG = "APP_TAG"
     }
 
 }

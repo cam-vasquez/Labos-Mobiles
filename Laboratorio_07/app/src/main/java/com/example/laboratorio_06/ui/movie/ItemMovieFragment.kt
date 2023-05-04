@@ -1,5 +1,4 @@
-package com.example.laboratorio_06.ui.movie/*
-// package com.example.laboratorio_06.ui.movie
+package com.example.laboratorio_06.ui.movie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [item_movie.newInstance] factory method to
+ * Use the [ItemMovieFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class item_movie : Fragment() {
+class ItemMovieFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -46,12 +45,12 @@ class item_movie : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment item_movie.
+         * @return A new instance of fragment ItemMovieFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            item_movie().apply {
+            ItemMovieFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -59,4 +58,3 @@ class item_movie : Fragment() {
             }
     }
 }
-*/

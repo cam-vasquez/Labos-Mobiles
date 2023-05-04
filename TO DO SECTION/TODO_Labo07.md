@@ -20,7 +20,8 @@ dataBinding{
 
 DataBinding es una función de Android que permite vincular los elementos de la interfaz de usuario (UI) de una aplicación directamente a los datos de la aplicación, lo que significa que no es necesario realizar actualizaciones manuales para que la interfaz refleje los cambios en los datos. 
 
--  
--  
+-  En lugar de tener que actualizar manualmente los elementos de la UI en el código, DataBinding permite que la UI se actualice automáticamente a medida que los datos cambian en la aplicación. Esto significa que es posible  centrarse en la lógica de la aplicación en lugar de preocuparse por la sincronización de los datos y la UI. 
+-  Además, DataBinding proporciona una mayor eficiencia y rendimiento, ya que reduce la necesidad de hacer referencia a los elementos de la interfaz de usuario en el código y también disminuye la cantidad de código repetitivo necesario para mantener la sincronización de los datos y la UI.
+
 
 

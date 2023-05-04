@@ -7,6 +7,8 @@ import com.example.laboratorio_06.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    //Listo!
+
     private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

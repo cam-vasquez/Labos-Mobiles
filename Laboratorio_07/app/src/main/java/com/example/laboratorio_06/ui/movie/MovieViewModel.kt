@@ -18,21 +18,22 @@ class MovieViewModel (private val repository: MovieRepository): ViewModel() {
 
     fun getMovies () = repository.getMovies()
 
-    private fun addMovie (movie: MovieModel) = repository.setMovies(movie)
+    private fun addMovies(movie: MovieModel) = repository.setMovies(movie)
 
     fun createMovie(){
         if(!validateData()){
             status.value = WRONG_INFORMATION
             return
         }
+
         val movie = MovieModel(
             name.value!!,
             category.value!!,
             description.value!!,
             qualification.value!!,
+        )
 
-            )
-        addMovie(movie)
+        addMovies(movie)
         clearData()
 
         status.value = MOVIE_CREATED
@@ -40,10 +41,10 @@ class MovieViewModel (private val repository: MovieRepository): ViewModel() {
 
     private fun validateData(): Boolean{
         when{
-            name.value.isNullOrBlank() -> return false
-            category.value.isNullOrBlank() -> return false
-            description.value.isNullOrBlank() -> return false
-            qualification.value.isNullOrBlank() -> return false
+            name.value.isNullOrEmpty() -> return false
+            category.value.isNullOrEmpty() -> return false
+            description.value.isNullOrEmpty() -> return false
+            qualification.value.isNullOrEmpty() -> return false
         }
         return true
     }
@@ -62,13 +63,12 @@ class MovieViewModel (private val repository: MovieRepository): ViewModel() {
         val Factory = viewModelFactory {
             initializer {
                 val movieRepositoryApp = (this[APPLICATION_KEY] as MovieReviewerApplication).movieRepository
-
                 MovieViewModel(movieRepositoryApp)
             }
         }
+
         const val MOVIE_CREATED = "Movie created"
         const val  WRONG_INFORMATION = "Wrong information"
         const val INACTIVE = ""
-
     }
 }

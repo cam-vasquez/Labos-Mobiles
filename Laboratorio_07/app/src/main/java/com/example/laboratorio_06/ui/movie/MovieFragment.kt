@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.laboratorio_06.databinding.FragmentNewMovieBinding
+import com.example.laboratorio_06.databinding.FragmentMovieBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,28 +18,15 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MovieFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
-    // aqui me sale solo asi aiudaaa
-
-    private lateinit var binding: FragmentNewMovieBinding
+    private lateinit var binding: FragmentMovieBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-        binding  = FragmentNewMovieBinding.inflate(inflater, container , false)
+        binding  = FragmentMovieBinding.inflate(inflater, container, false)
         return binding.root
     }
 

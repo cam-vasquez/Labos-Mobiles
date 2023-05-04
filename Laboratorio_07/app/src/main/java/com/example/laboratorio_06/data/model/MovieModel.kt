@@ -5,5 +5,4 @@ data class MovieModel(
     val category: String,
     val description: String,
     val qualification: String,
-
 )

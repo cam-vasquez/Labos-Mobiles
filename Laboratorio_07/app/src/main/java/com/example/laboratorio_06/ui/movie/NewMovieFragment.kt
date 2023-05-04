@@ -13,15 +13,12 @@ import com.example.laboratorio_06.databinding.FragmentNewMovieBinding
 
 class NewMovieFragment : Fragment() {
 
-    private lateinit var binding: FragmentNewMovieBinding
 
     private val movieViewModel: MovieViewModel by activityViewModels {
         MovieViewModel.Factory
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var binding: FragmentNewMovieBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

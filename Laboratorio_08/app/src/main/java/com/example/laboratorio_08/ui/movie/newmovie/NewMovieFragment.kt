@@ -11,9 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.laboratorio_08.databinding.FragmentNewMovieBinding
 import com.example.laboratorio_08.ui.movie.viewmodel.MovieViewModel
 
-/**
-    This fragments handles adding new movie to app data
- */
+
 class NewMovieFragment : Fragment() {
 
     private lateinit var binding : FragmentNewMovieBinding

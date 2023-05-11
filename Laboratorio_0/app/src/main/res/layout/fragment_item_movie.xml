@@ -1,0 +1,82 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.laboratorio_06.ui.movie.viewmodel.MovieViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.movie.MovieFragment"
+        android:background="@color/backgroundLayout">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/regular_gap"
+        app:cardBackgroundColor="@color/cardLayout"
+        app:cardCornerRadius="@dimen/small_gap"
+        tools:context=".ui.movie.billboard.recyclerview.MovieItemFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/regular_gap"
+            android:paddingVertical="@dimen/small_gap">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="225dp"
+                android:layout_height="80dp"
+                android:layout_weight="2"
+                app:cardCornerRadius="@dimen/small_gap">
+
+                <ImageView
+                    android:id="@+id/image_view_movie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/cardLayout"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/default_movies"
+                    app:tint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/regular_gap">
+
+                <TextView
+                    android:id="@+id/text_view_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_movie_title"
+                    tools:text="@string/harrypotter_2_title" />
+
+                <TextView
+                    android:id="@+id/text_view_qualification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardLayout"
+                    android:textColor="@color/calification"
+                    android:textSize="@dimen/text_movie_title"
+                    android:textStyle="bold"
+                    tools:text="@string/harrypotter_2_calification" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

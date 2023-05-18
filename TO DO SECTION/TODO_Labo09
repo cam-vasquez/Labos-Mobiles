@@ -1,20 +1,32 @@
 ## TODO LABO 08  
 
-### 1. ¿Cuál es la principal ventaja de utilizar Recycler View?
+### 1. ¿Qué es una coroutine en Kotlin y cómo se diferencia de un hilo tradicional?  
   
-Recycler View, permite mostrar de manera eficiente y escalable una lista de elementos en pantalla. Además, Recycler View en lugar de cargar todos los elementos de la lista a la vez, carga únicamente los elementos que están siendo visibles, lo que reduce la sobrecarga de memoria y mejora el rendimiento de la aplicación.  
+Las coroutines son un mecanismo de programación que permite escribir código asíncrono de manera secuencial y estructurada en Kotlin. A diferencia de los hilos tradicionales, las coroutines son concurrencia cooperativa, lo que significa que el programador tiene el control para decidir cuándo se suspende y reanuda.  
+
+### 2. ¿Cuál es la importancia de la suspensión en las coroutines y cómo se implementa?  
+  
+Nos ayuda a suspender momentáneamente la ejecución de una coroutine sin obstruir el main thread, es decir que es posible desarrollar código asíncrono y no bloqueante que pueda manejar  actividades largas o bloqueantes sin interferir con el hilo principal de la interfaz de usuario o hacer que la aplicación sea inutilizable.
+
+Cuando una coroutine es suspendida, su estado y contexto de ejecución se mantienen en memoria. Esto incluye los valores de las variables locales, la posición en el código donde se suspendió y cualquier otra información relevante. Cuando la coroutine es reanudada, todos estos datos se restauran y la ejecución continúa desde el punto en el que se detuvo, como si nunca se hubiera pausado.
+  
+  
+### 3. ¿Cuál es el propósito del Dispatcher en las coroutines y cómo se elige uno adecuado para cada tarea?  
+  
+Su propósito es especificar en que hilo o hilos se ejecutara una coroutine. Se elige uno para una tarea de acuerdo a la importancia que esta tenga.
+  
+### 4. ¿Cuál es el propósito y el uso de la función async en las coroutines?
+ 
+Se utiliza para lanzar coroutines de manera asíncrona, con esto se obtiene el resultado utilizando el objeto Deferred. El resultado se obtiene mediante la función await().   
+Async es útil cuando se seben ejecutar tareas concurrentes y combinar los resultados.
 
 
-### 2. Menciona los componentes de RecyclerView y la función que tiene cada uno de ellos
 
-1. **List Item**  
 
-El archivo list_item.xml se utiliza en conjunto con RecyclerView para definir la vista que se mostrará para cada elemento de la lista. Este archivo de diseño define la estructura visual y los elementos de diseño de la vista de cada elemento, ya sea texto, imágenes, botones, etc
 
-2. **ViewHolder**  
 
-El ViewHolder es un componente importante para el RecyclerView, ya que se utiliza para almacenar unareferencia a la vista de cada elemento de la lista. Su principal función es optimizar el rendimiento del RecyclerView, permitiendo la reutilización de vistas y de reducir la carga en la memoria del dispositivo.
 
-3. **Adapter**  
 
-El Adapter dentro de un RecyclerView se encarga de vincular los datos de una lista o de un conjunto de datos con las vistas que se muestran en pantalla. El Adapter proporciona una manera eficiente de crear y reutilizar las vistas que se muestran en pantalla al tiempo que se asegura de que los datos se muestran en el orden y cantidad correctos.
+
+
+

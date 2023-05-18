@@ -34,7 +34,10 @@ class CoroutinesFragment : Fragment() {
         }
 
         binding.downloadButton.setOnClickListener {
-            val scope = CoroutineScope(Dispatchers.IO)
+//            CoroutineScope(Dispatchers.IO).launch {
+//                downloadUserData()
+//            }
+        val scope = CoroutineScope(Dispatchers.IO)
             downloadJob = scope.launch {
                 downloadUserData()
             }

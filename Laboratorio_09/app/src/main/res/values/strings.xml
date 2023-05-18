@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CorutinesDemo</string>
+    <string name="app_name">CoroutinesDemo</string>
     <string name="count">Count</string>
     <string name="download">Download</string>
     <!-- TODO: Remove or change this placeholder text -->

@@ -22,11 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    fun MoveDiferentScreen(screenFragment: Fragment){
-//        val trans = supportFragmentManager.beginTransaction()
-//        trans.replace(R.id.nav_host_fragment, screenFragment)
-//        trans.commit()
-//    }
+
 
     override fun onBackPressed() {
         val trans = supportFragmentManager.beginTransaction()
@@ -35,9 +31,6 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
 
-//        trans.replace(R.id.nav_host_fragment, BillBoardFragment())
-//        movieViewModel.SetBillboardFragment()
-//        trans.commit()}
     }
 
 }

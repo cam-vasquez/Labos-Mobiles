@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    Colors Super-->
+    <color name="dominant">#FFFFFFFF</color>
+    <color name="secondary">#202124</color>
+    <color name="tertiary">#4880FF</color>
+    <color name="accent1">#FFC700</color>
+    <color name="accent2">#F6851E</color>
+
+
+
 </resources>

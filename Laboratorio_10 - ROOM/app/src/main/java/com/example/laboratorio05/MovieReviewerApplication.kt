@@ -7,14 +7,15 @@ import com.example.laboratorio05.repositories.CastRepository
 import com.example.laboratorio05.repositories.MovieRepository
 
 class MovieReviewerApplication : Application() {
-    private val database: MovieReviewerDatabase by lazy{
+
+    private val database: MovieReviewerDatabase by lazy {
         MovieReviewerDatabase.newInstance(this)
     }
 
     val movieRepository : MovieRepository by lazy {
         MovieRepository(database.movieDao())
     }
-    val actorRepository : ActorRepository by lazy{
+    val actorRepository : ActorRepository by lazy {
         ActorRepository(database.actorDao())
     }
 

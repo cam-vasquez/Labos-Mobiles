@@ -13,6 +13,7 @@ interface MovieDao {
     @Query("SELECT * FROM movie_table")
     suspend fun getAllMovies(): List<MovieModel>
 
+    // Usar TRansaction facilita el proceso
     @Transaction
     @Insert
     suspend fun insertMovie(movie: MovieModel)

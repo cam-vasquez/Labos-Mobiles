@@ -1,5 +1,7 @@
 package com.example.laboratorio05.ui.casting.newcasting
 
+// importing dependencies
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

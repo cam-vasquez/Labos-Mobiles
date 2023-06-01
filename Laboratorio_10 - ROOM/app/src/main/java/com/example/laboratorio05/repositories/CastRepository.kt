@@ -5,4 +5,4 @@ import com.example.laboratorio05.data.model.CastModel
 
 class CastRepository(private val castDao: CastDao) {
     suspend fun addCasting(casting: CastModel) = castDao.insert(casting)
-}
+    }

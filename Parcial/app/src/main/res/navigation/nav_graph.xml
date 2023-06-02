@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph.xml">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/trackerFragment">
 
+    <fragment
+        android:id="@+id/trackerFragment"
+        android:name="com.example.market_tracker.TrackerFragment"
+        android:label="fragment_tracker"
+        tools:layout="@layout/fragment_tracker" >
+        <action
+            android:id="@+id/action_trackerFragment_to_marketFragment"
+            app:destination="@id/marketFragment" />
+        <action
+            android:id="@+id/action_trackerFragment_to_newSuperFragment"
+            app:destination="@id/newSuperFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newSuperFragment"
+        android:name="com.example.market_tracker.NewSuperFragment"
+        android:label="fragment_new_super"
+        tools:layout="@layout/fragment_new_super" />
+    <fragment
+        android:id="@+id/marketFragment"
+        android:name="com.example.market_tracker.MarketFragment"
+        android:label="fragment_market"
+        tools:layout="@layout/fragment_market" />
 </navigation>

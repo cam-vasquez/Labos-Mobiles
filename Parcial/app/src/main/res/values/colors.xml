@@ -5,16 +5,15 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+
+<!--text color-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-<!--    Colors Super-->
-    <color name="dominant">#FFFFFFFF</color>
-    <color name="secondary">#202124</color>
-    <color name="tertiary">#4880FF</color>
-    <color name="accent1">#FFC700</color>
-    <color name="accent2">#F6851E</color>
-
+<!-- color palette-->
+    <color name="dominant">#2AC17E</color>
+    <color name="secondary">#54CD98</color>
+    <color name="tertiary">#99A0B1</color>
+    <color name="accent">#F4F8FB</color>
 
 
 </resources>

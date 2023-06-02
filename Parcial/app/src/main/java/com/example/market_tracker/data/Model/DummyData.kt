@@ -21,7 +21,7 @@ val name05 = "Supermercado E"
 val location05 = "Ciudad V"
 
 // Supermarkets
-val supermarkets = mutableListOf(
+val supers = mutableListOf(
    MarketModel(name01, location01),
    MarketModel(name02, location02),
    MarketModel(name03, location03),

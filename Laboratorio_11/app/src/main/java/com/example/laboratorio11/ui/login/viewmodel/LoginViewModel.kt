@@ -1,6 +1,7 @@
 package com.example.laboratorio11.ui.login.viewmodel
 
 import android.app.Application
+import android.text.Editable.Factory
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -23,13 +24,25 @@ class LoginViewModel(private val repository: CredentialsRepository) : ViewModel(
         get() = _status
 
     private fun login(email: String, password: String) {
-        // TODO: Create a coroutine to call the login function from the repository and inside the coroutine set the value of the status
+        viewModelScope.launch {
+            _status.postValue(
+                when(val response = repository.login(email, password)){
+                    is ApiResponse.Error -> LoginUiStatus.Error(response.exception)
+                    is ApiResponse.ErrorWithMessage -> LoginUiStatus.ErrorWithMessage(response.message)
+                    is ApiResponse.Success -> LoginUiStatus.Success(response.data)
 
+                }
+            )
+        }
     }
 
     fun onLogin() {
-        // TODO: Call the validateData function and if the data is valid call the login function
+        if(!validateData()){
+            _status.value = LoginUiStatus.ErrorWithMessage("Wrong information")
+            return
+        }
 
+        login(email = email.value!!, password = password.value!!)
     }
 
     private fun validateData(): Boolean {
@@ -50,7 +63,12 @@ class LoginViewModel(private val repository: CredentialsRepository) : ViewModel(
     }
 
     companion object {
-        // TODO: Create a LoginViewModel Factory
+        val Factory = viewModelFactory {
+            initializer {
+                val app = this[APPLICATION_KEY] as RetrofitApplication
+                LoginViewModel(app.credentialsRepository)
+            }
+        }
 
     }
 }

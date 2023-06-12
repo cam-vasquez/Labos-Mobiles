@@ -9,16 +9,25 @@ import com.example.laboratorio11.repository.CredentialsRepository
 
 class RetrofitApplication : Application() {
 
-    // TODO: Create a variable to store the token in the SharedPreferences
+    private val prefs: SharedPreferences by lazy {
+        getSharedPreferences("Retrofit", Context.MODE_PRIVATE)
+    }
 
-    // TODO: Get the API service from the Retrofit instance and set the token
+    private fun getAPIService() = with(RetrofitInstance){
+        setToken(getTokent())
+        getLoginService()
+    }
+    fun getTokent(): String = prefs.getString(USER_TOKEN, "")!!
 
-    // TODO: Create a function to get the token
+   val credentialsRepository: CredentialsRepository by lazy {
+       CredentialsRepository(getAPIService())
+   }
 
-    // TODO: Initialize the repository
-
-    // TODO: Create a function to save the token in the SharedPreferences
-
+    fun saveAuthToken(token: String){
+        val editor = prefs.edit()
+        editor.putString(USER_TOKEN, token)
+        editor.apply()
+    }
     companion object {
         const val USER_TOKEN = "user_token"
     }

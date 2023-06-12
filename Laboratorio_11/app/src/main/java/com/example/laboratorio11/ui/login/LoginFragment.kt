@@ -1,6 +1,7 @@
 package com.example.laboratorio11.ui.login
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,9 @@ import com.google.android.material.snackbar.Snackbar
 
 class LoginFragment : Fragment() {
 
-    // TODO: Declare the LoginViewModel using the activityViewModels property delegate
+    private  val loginViewModel: LoginViewModel by  activityViewModels {
+        LoginViewModel.Factory
+    }
 
     private lateinit var binding: FragmentLoginBinding
 
@@ -38,35 +41,27 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO: Uncomment
-        /*
         setViewModel()
         observeStatus()
-        */
+
 
         binding.registerBtn.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 
-    // TODO: Create a function to set the view model
-    /*
     private fun setViewModel() {
         binding.viewmodel = loginViewModel
     }
-    */
 
-    // TODO: Create a function to observe the status LiveData
-    /*
+
     private fun observeStatus() {
         loginViewModel.status.observe(viewLifecycleOwner) { status ->
             handleUiStatus(status)
         }
     }
-     */
 
-    // TODO: Create a function to handle the UI status
-    /*
+
     private fun handleUiStatus(status: LoginUiStatus) {
         when(status) {
             is LoginUiStatus.Error -> {
@@ -85,6 +80,6 @@ class LoginFragment : Fragment() {
             else -> {}
         }
     }
-    */
+
 
 }
